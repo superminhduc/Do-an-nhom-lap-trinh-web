@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Đăng Nhập / Đăng Ký - Nhân Phát Đức Beauty</title>
+    <style>
+        /* CSS giống như trước */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .toggle-buttons {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .toggle-btn {
+            flex: 1;
+            padding: 10px;
+            background-color: #ddd;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+        }
+        .toggle-btn.active {
+            background-color: #5a574c;
+            color: #fff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #5a574c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #4a4740;
+        }
+        .links {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .links a {
+            color: #5a574c;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .form-section {
+            display: none;
+        }
+        .form-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="toggle-buttons">
+            <button class="toggle-btn active" id="login-toggle">Đăng Nhập</button>
+            <button class="toggle-btn" id="register-toggle">Đăng Ký</button>
+        </div>
+
+        <!-- Form Đăng Nhập -->
+        <div class="form-section active" id="login-form-section">
+            <h2>Đăng Nhập</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-username">Email hoặc Tên đăng nhập:</label>
+                    <input type="text" id="login-username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Mật khẩu:</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <button type="submit" class="btn">Đăng Nhập</button>
+                <div id="login-error" class="error"></div>
+            </form>
+        </div>
+
+        <!-- Form Đăng Ký -->
+        <div class="form-section" id="register-form-section">
+            <h2>Đăng Ký Tài Khoản</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="register-fullname">Họ và tên:</label>
+                    <input type="text" id="register-fullname" name="fullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email:</label>
+                    <input type="email" id="register-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Mật khẩu:</label>
+                    <input type="password" id="register-password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">Xác nhận mật khẩu:</label>
+                    <input type="password" id="register-confirm-password" name="confirm-password" required>
+                </div>
+                <button type="submit" class="btn">Đăng Ký</button>
+                <div id="register-error" class="error"></div>
+            </form>
+        </div>
+
+        <div class="links">
+            <a href="/forgot-password">Quên mật khẩu?</a> | <a href="/">Quay lại trang chủ</a>
+        </div>
+    </div>
+
+    <script>
+        // Toggle giữa đăng nhập và đăng ký
+        const loginToggle = document.getElementById('login-toggle');
+        const registerToggle = document.getElementById('register-toggle');
+        const loginSection = document.getElementById('login-form-section');
+        const registerSection = document.getElementById('register-form-section');
+
+        loginToggle.addEventListener('click', function() {
+            loginToggle.classList.add('active');
+            registerToggle.classList.remove('active');
+            loginSection.classList.add('active');
+            registerSection.classList.remove('active');
+        });
+
+        registerToggle.addEventListener('click', function() {
+            registerToggle.classList.add('active');
+            loginToggle.classList.remove('active');
+            registerSection.classList.add('active');
+            loginSection.classList.remove('active');
+        });
+
+        // Xử lý form đăng nhập
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+            const errorMsg = document.getElementById('login-error');
+
+            if (!username || !password) {
+                errorMsg.textContent = 'Vui lòng nhập đầy đủ thông tin!';
+                return;
+            }
+
+            // Kiểm tra tài khoản mẫu
+            if (username === 'customer@example.com' && password === '123456') {
+                alert('Đăng nhập thành công!');
+                window.location.href = 'index.html';  // Chuyển sang /trangweb/login
+                return;
+            }
+
+            // Kiểm tra tài khoản đã đăng ký (từ localStorage)
+            const storedUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+            const user = storedUsers.find(u => u.email === username && u.password === password);
+            if (user) {
+                alert('Đăng nhập thành công!');
+                window.location.href = 'index.html';  // Chuyển sang /trangweb/login
+            } else {
+                errorMsg.textContent = 'Email hoặc mật khẩu sai!';
+            }
+        });
+
+        // Xử lý form đăng ký
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fullname = document.getElementById('register-fullname').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm-password').value;
+            const errorMsg = document.getElementById('register-error');
+
+            if (!fullname || !email || !password || !confirmPassword) {
+                errorMsg.textContent = 'Vui lòng nhập đầy đủ thông tin!';
+                return;
+            }
+            if (password !== confirmPassword) {
+                errorMsg.textContent = 'Mật khẩu xác nhận không khớp!';
+                return;
+            }
+
+            // Kiểm tra email đã tồn tại
+            const storedUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+            if (storedUsers.find(u => u.email === email)) {
+                errorMsg.textContent = 'Email này đã được đăng ký!';
+                return;
+            }
+
+            // Lưu tài khoản mới vào localStorage
+            storedUsers.push({ fullname, email, password });
+            localStorage.setItem('registeredUsers', JSON.stringify(storedUsers));
+
+            alert('Đăng ký thành công! Vui lòng đăng nhập.');
+            // Chuyển sang form đăng nhập
+            loginToggle.click();
+        });
+    </script>
+</body>
+</html>

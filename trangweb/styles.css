@@ -1,0 +1,349 @@
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+    background-color: #fff; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.search {
+    display: flex;
+    flex: 1;
+    max-width: 400px;
+    margin: 0 20px;
+}
+
+.search input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    background-color: #f0f0f0;
+    color: #222;
+}
+
+.search button {
+    padding: 10px 15px;
+    background-color: #b05070;
+    color: rgb(156, 138, 138);
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search button:hover {
+    background-color: #c2185b;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.icon-btn:hover {
+    background-color: #e91e63;
+    color: rgb(99, 99, 99);
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #e91e63;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* Navigation */
+.categories {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.categories-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.categories-toggle-wrap {
+    position: relative;
+}
+
+.categories-toggle {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.categories-toggle:hover {
+    background-color: #f5f5f5;
+}
+
+.toggle-submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    list-style: none;
+    min-width: 200px;
+    display: none;
+    z-index: 200;
+}
+
+.categories-toggle-wrap:hover .toggle-submenu,
+.categories-toggle:focus + .toggle-submenu {
+    display: block;
+}
+
+.toggle-submenu li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.toggle-submenu li a:hover {
+    background-color: #f5f5f5;
+}
+
+.categories-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.categories-list li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.categories-list li a:hover {
+    color: #e91e63;
+}
+
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search {
+        max-width: none;
+        margin: 0;
+    }
+
+    .categories-inner {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+.footer {
+  background-color: #5a574c;
+  color: #ddd;
+  font-family: Arial, sans-serif;
+  padding: 40px 20px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex-basis: 30%; /* tăng kích thước mỗi cột vì giảm 1 cột */
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.footer-section hr {
+  border: 1px solid #aaa;
+  width: 30px;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.footer-section p,
+.footer-section li {
+  color: #ddd;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.facebook-box img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.footer-bottom {
+  text-align: center;
+  color: #bbb;
+  font-size: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #777;
+  margin-top: 20px;
+}
+.introduction {
+  text-align: center;
+  max-width: 700px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+  color: #000;
+}
+
+.introduction h2 {
+  font-weight: 700;
+  font-size: 28px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.introduction .underline {
+  width: 40px;
+  height: 2px;
+  background-color: #000;
+  margin: 0 auto 20px auto;
+}
+
+.introduction p {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+}
+
+.introduction p strong {
+  font-weight: 700;
+}
+
+.section-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 26px;
+  margin-top: 30px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.underline {
+  width: 40px;
+  height: 2px;
+  background-color: #000; /* Màu gạch ngang */
+  margin: 0 auto 20px auto;
+}
+.product-list {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-item {
+  width: 23%;  /* 4 sản phẩm trên 1 hàng, bạn có thể thay đổi % tùy ý */
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+}
+
+.product-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.product-item p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}

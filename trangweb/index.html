@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="HandheldFriendly" content="true">
+        <title>
+            Nhân Phát Đức Beauty &ndash; NPĐ Beauty
+        </title>
+
+        <!-- Thêm stylesheet riêng cho header -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <!-- Header: logo, tìm kiếm, đăng nhập, giỏ hàng -->
+        <header role="banner">
+            <div class="header-inner">
+                <a class="logo" href="/" aria-label="Trang chủ NPĐ Beauty">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/VLU_Campus.webp" alt="NPĐ Beauty" />
+                </a>
+
+                <form class="search" role="search" action="/search" method="get" aria-label="Tìm kiếm sản phẩm">
+                    <input id="site-search" name="q" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Tìm kiếm" />
+                    <button type="submit" aria-label="Tìm">
+                        <!-- icon tìm kiếm đơn giản -->
+                        🔍
+                    </button>
+                </form>
+
+                <div class="header-actions" role="group" aria-label="Tác vụ người dùng">
+                    <a class="icon-btn" href="/trangweb/login.html" aria-label="Đăng nhập">
+                        <!-- icon người (svg) -->
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 12c2.209 0 4-1.791 4-4s-1.791-4-4-4-4 1.791-4 4 1.791 4 4 4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 20c0-2.5 3.582-4 8-4s8 1.5 8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+
+                    <a class="icon-btn" href="/trangweb/cart.html" aria-label="Giỏ hàng">
+                        <!-- icon giỏ hàng (svg) -->
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 6h15l-1.5 9h-12L6 6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="10" cy="20" r="1" fill="currentColor"/>
+                            <circle cx="18" cy="20" r="1" fill="currentColor"/>
+                        </svg>
+                        <span class="cart-count" aria-hidden="true">0</span >
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- MỤC DANH MỤC SẢN PHẨM -->
+        <nav class="categories" aria-label="Danh mục sản phẩm">
+            <div class="categories-inner">
+                <!-- wrapper để submenu chỉ hiện khi trỏ vào nút "Danh mục" -->
+                <div class="categories-toggle-wrap">
+                    <button class="categories-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                        Danh Mục Sản Phẩm ▾
+                    </button>
+
+                    <ul class="toggle-submenu" role="menu" aria-label="Danh mục chính">
+                        <li role="none"><a role="menuitem" href="/promo">Son môi</a></li>
+                        <li role="none"><a role="menuitem" href="/new">Dưỡng da</a></li>
+                        <li role="none"><a role="menuitem" href="/face-wash">Sữa rửa mặt</a></li>
+                        <li role="none"><a role="menuitem" href="/makeup">Trang điểm</a></li>
+                        <li role="none"><a role="menuitem" href="/mascara">Mascara</a></li>
+                        
+                    </ul>
+                </div>
+
+                <!-- nếu vẫn cần list ngang chính, giữ hoặc bỏ tùy bạn -->
+                <ul class="categories-list" role="menubar" aria-hidden="false">
+                    <li><a href="/promo">Khuyến mãi</a></li>
+                    <li><a href="/About">About</a></li>
+                    <li><a href="/contact">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section class="introduction">
+  <h2>Nhân Phát Đức Beauty</h2>
+  <div class="underline"></div>
+  <p>
+    <strong>The Đức Nhân Phát</strong> là thương hiệu mỹ phẩm đến từ Việt Nam với giá cả phải chăng nhưng chất lượng xứng tầm với những thương hiệu cao cấp khác. 
+    <strong>The Đức Nhân Phát</strong> áp dụng những công nghệ hiện đại trong ngành mỹ phẩm để tạo ra những sản phẩm an toàn và hiệu quả cao cho mọi làn da
+  </p>
+</section>
+    <h2 class="section-title">BỘ SẢN PHẨM NỔI BẬT </h2>
+    <div class="underline"></div>
+    <!-- Danh sách sản phẩm -->
+    <div class="product-list">
+  <div class="product-item">
+    <img src="link_anh_sanpham1.jpg" alt="Tinh chất trị mụn" />
+    <p>Tinh chất trị mụn, se khít lỗ chân lông The Ordinary Niacinamide 10% + Zinc 1%</p>
+  </div>
+
+  <div class="product-item">
+    <img src="link_anh_sanpham10.jpg" alt="Tinh chất cấp nước" />
+    <p>Nước Tẩy Trang Byphasse Dành Cho Mọi Loại Da Solution Micellaire</p>
+  </div>
+
+  <div class="product-item">
+    <img src="link_anh_sanpham3.jpg" alt="Serum tẩy tế bào chết" />
+    <p>Serum tẩy tế bào chết, cải thiện mụn The Ordinary AHA 30% BHA 2% Peeling Solution</p>
+  </div>
+
+  <div class="product-item">
+    <img src="link_anh_sanpham14.jpg" alt="Tinh chất trị mụn khác" />
+    <p>Kem Chống Nắng Caryophy Nâng Tông Smart Sunscreen Tone Up SPF50+/PA+++ 50ml</p>
+  </div>
+  <div class="product-item">
+    <img src="link_anh_sanpham5.jpg" alt="Tinh chất trị mụn" />
+    <p>Tinh chất trị mụn, se khít lỗ chân lông The Ordinary Niacinamide 10% + Zinc 1%</p>
+  </div>
+
+  <div class="product-item">
+    <img src="link_anh_sanpham6.jpg" alt="Tinh chất cấp nước" />
+    <p>[Gói 10 Miếng] Khăn Tẩy Trang Bioré Cleansing Cotton Rich Moisture</p>
+  </div>
+
+  <div class="product-item">
+    <img src="link_anh_sanpham7.jpg" alt="Serum tẩy tế bào chết" />
+    <p>[Phiên Bản Nâng Cấp] Nước Tẩy Trang Derladie Làm Sạch Da, Dịu Nhẹ Cleansing Water Witch Hazel Micellar 500ml</p>
+  </div>
+
+  <div class="product-item">
+    <img src="link_anh_sanpham8.jpg" alt="Tinh chất trị mụn khác" />
+    <p>TSữa Dưỡng Thể Body Vaseline Dưỡng Sáng Da, Dưỡng Ẩm Toàn Thân Healthy Bright
+</p>
+    
+  </div>
+  <div class="product-item">
+    <img src="link_anh_sanpham9.jpg" alt="Tinh chất trị mụn" />
+    <p>Sữa Rửa Mặt Simple Dịu Nhẹ, Dành Cho Da Nhạy Cảm Refreshing Facial Wash 150ml</p>
+  </div>
+
+  <div class="product-item">
+    <img src="link_anh_sanpham11.jpg" alt="Tinh chất cấp nước" />
+    <p>Sữa Rửa Mặt Senka Tạo Bọt Dành Cho Da Mụn Perfect Whip Acne Care 100g</p>
+  </div>
+
+  <div class="product-item">
+    <img src="link_anh_sanpham12.jpg" alt="Serum tẩy tế bào chết" />
+    <p>Nước Hoa Hồng Chiết Xuất Diếp Cá, Tía Tô Chinoshio Natural Skin Lotion 500ml</p>
+  </div>
+
+  <div class="product-item">
+    <img src="link_anh_sanpham13.jpg" alt="Tinh chất trị mụn khác" />
+    <p>Kem Dưỡng Angel's Liquid Hỗ Trợ Sáng Da, Mờ Thâm Nám 7 Day Glutathione 700 V-Cream 50ml</p>
+  </div>
+</div>
+        <!-- Thay inline script bằng file JS riêng -->
+        <script src="js/categories.js" defer></script>
+    </body>
+    <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>LIÊN HỆ</h3>
+      <hr />
+      <p>Địa chỉ: 38 đường 6, Long Trường, Quận 9, Hồ Chí Minh</p>
+      <p>Email: NhanPhatDucBeauty.vn@gmail.com</p>
+      <p>Hotline: 0399.135.719</p>
+      <p>https://NhanPhatDucBeauty.com.vn/</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+      <hr />
+      <ul>
+        <li>Giới thiệu</li>
+        <li>Hướng dẫn mua hàng</li>
+        <li>Chính sách đổi trả</li>
+        <li>Chính sách bảo mật</li>
+        <li>Điều khoản dịch vụ</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>FACEBOOK</h3>
+      <hr />
+      <div class="facebook-box">
+        <img src="link_anh_facebook.png" alt="Nhân Phát Đức Beauty" />
+        <p>Nhân Phát Đức Beauty<br/>37.194 lượt thích</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright 2025 © <strong>ordinary.com.vn</strong></p>
+  </div>
+</footer>
+</html>
