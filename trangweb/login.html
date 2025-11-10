@@ -148,7 +148,20 @@
         </div>
     </div>
 
+    <!-- Notification -->
+    <div id="notification" class="notification" style="display: none;"></div>
+
     <script>
+        // Notification function
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000); // Hide after 3 seconds
+        }
+
         // Toggle giữa đăng nhập và đăng ký
         const loginToggle = document.getElementById('login-toggle');
         const registerToggle = document.getElementById('register-toggle');
@@ -183,7 +196,7 @@
 
             // Kiểm tra tài khoản mẫu
             if (username === 'customer@example.com' && password === '123456') {
-                alert('Đăng nhập thành công!');
+                showNotification('Đăng nhập thành công!');
                 window.location.href = 'index.html';  // Chuyển sang /trangweb/login
                 return;
             }
@@ -192,7 +205,7 @@
             const storedUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
             const user = storedUsers.find(u => u.email === username && u.password === password);
             if (user) {
-                alert('Đăng nhập thành công!');
+                showNotification('Đăng nhập thành công!');
                 window.location.href = 'index.html';  // Chuyển sang /trangweb/login
             } else {
                 errorMsg.textContent = 'Email hoặc mật khẩu sai!';
@@ -228,7 +241,7 @@
             storedUsers.push({ fullname, email, password });
             localStorage.setItem('registeredUsers', JSON.stringify(storedUsers));
 
-            alert('Đăng ký thành công! Vui lòng đăng nhập.');
+            showNotification('Đăng ký thành công! Vui lòng đăng nhập.');
             // Chuyển sang form đăng nhập
             loginToggle.click();
         });

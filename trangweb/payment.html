@@ -3,49 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Giỏ hàng - Nhân Phát Đức Beauty</title>
+  <title>Thanh Toán - Nhân Phát Đức Beauty</title>
   <link rel="stylesheet" href="/trangweb/css/styles.css" />
-  <link rel="stylesheet" href="/trangweb/css/cart.css" />
+  <link rel="stylesheet" href="/trangweb/css/payment.css" />
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header: logo, tìm kiếm, đăng nhập, giỏ hàng -->
   <header role="banner">
     <div class="header-inner">
-      <a class="logo" href="index.html" aria-label="Trang chủ NPĐ Beauty">
-        <img src="image/logo-my-pham-2.png" alt="NPĐ Beauty" />
+      <a class="logo" href="/" aria-label="Trang chủ NPĐ Beauty">
+        <img src="/trangweb/image/logo-my-pham-2.png" alt="NPĐ Beauty" />
         <span class="logo-text">Nhân Phát Đức Beauty</span>
       </a>
 
       <form class="search" role="search" action="/search" method="get" aria-label="Tìm kiếm sản phẩm">
         <input id="site-search" name="q" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Tìm kiếm" />
         <button type="submit" aria-label="Tìm">
+          <!-- icon tìm kiếm đơn giản -->
           🔍
         </button>
       </form>
 
       <div class="header-actions" role="group" aria-label="Tác vụ người dùng">
-        <a class="icon-btn" href="login.html" aria-label="Đăng nhập">
+        <a class="icon-btn" href="/trangweb/login.html" aria-label="Đăng nhập">
+          <!-- icon người (svg) -->
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 12c2.209 0 4-1.791 4-4s-1.791-4-4-4-4 1.791-4 4 1.791 4 4 4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M4 20c0-2.5 3.582-4 8-4s8 1.5 8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
 
-        <a class="icon-btn" href="cart.html" aria-label="Giỏ hàng">
+        <a class="icon-btn" href="/trangweb/cart.html" aria-label="Giỏ hàng">
+          <!-- icon giỏ hàng (svg) -->
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 6h15l-1.5 9h-12L6 6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             <circle cx="10" cy="20" r="1" fill="currentColor"/>
             <circle cx="18" cy="20" r="1" fill="currentColor"/>
           </svg>
-          <span class="cart-count" id="cart-count">0</span>
+          <span class="cart-count" aria-hidden="true">0</span>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Navigation -->
+  <!-- MỤC DANH MỤC SẢN PHẨM -->
   <nav class="categories" aria-label="Danh mục sản phẩm">
     <div class="categories-inner">
+      <!-- wrapper để submenu chỉ hiện khi trỏ vào nút "Danh mục" -->
       <div class="categories-toggle-wrap">
         <button class="categories-toggle" type="button" aria-haspopup="true" aria-expanded="false">
           Danh Mục Sản Phẩm ▾
@@ -60,6 +64,7 @@
         </ul>
       </div>
 
+      <!-- nếu vẫn cần list ngang chính, giữ hoặc bỏ tùy bạn -->
       <ul class="categories-list" role="menubar" aria-hidden="false">
         <li><a href="/promo">Khuyến mãi</a></li>
         <li><a href="/About">About</a></li>
@@ -68,17 +73,72 @@
     </div>
   </nav>
 
-  <!-- Breadcrumb -->
-  <div class="breadcrumb">
-    <a href="index.html">Trang chủ</a> > <span>Giỏ hàng</span>
-  </div>
+  <main class="checkout-container">
+    <div class="checkout-main">
+      <!-- Bên trái: Tóm tắt đơn hàng -->
+      <div class="order-summary">
+        <h2>Tóm Tắt Đơn Hàng</h2>
+        <div id="order-items"></div>
+        <div class="order-total">
+          <div class="total-row">
+            <span>Tổng cộng:</span>
+            <span id="total-amount">0 VND</span>
+          </div>
+        </div>
+      </div>
 
-  <main class="cart-container">
-    <div id="cart-items" class="cart-items"></div>
-    <div id="cart-gifts" class="cart-gifts"></div>
+      <!-- Bên phải: Form thanh toán -->
+      <div class="payment-form">
+        <h2>Thông Tin Thanh Toán</h2>
+
+        <!-- Thông tin khách hàng -->
+        <section class="form-section">
+          <h3>Thông Tin Khách Hàng</h3>
+          <form id="customer-form">
+            <div class="form-group">
+              <label for="fullname">Họ và tên *</label>
+              <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Số điện thoại *</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="address">Địa chỉ giao hàng *</label>
+              <textarea id="address" name="address" rows="3" required></textarea>
+            </div>
+          </form>
+        </section>
+
+        <!-- Phương thức thanh toán -->
+        <section class="form-section">
+          <h3>Phương Thức Thanh Toán</h3>
+          <div class="payment-methods">
+            <label class="payment-method">
+              <input type="radio" name="payment" value="cod" checked>
+              <span>Thanh toán khi nhận hàng (COD)</span>
+            </label>
+            <label class="payment-method">
+              <input type="radio" name="payment" value="bank">
+              <span>Chuyển khoản ngân hàng</span>
+            </label>
+            <label class="payment-method">
+              <input type="radio" name="payment" value="momo">
+              <span>Ví MoMo</span>
+            </label>
+          </div>
+        </section>
+
+        <!-- Nút đặt hàng -->
+        <button type="button" id="place-order-btn" class="btn-place-order">Đặt Hàng</button>
+      </div>
+    </div>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-section">
@@ -116,6 +176,10 @@
     </div>
   </footer>
 
-  <script src="/trangweb/js/cart.js"></script>
+  <!-- Notification -->
+  <div id="notification" class="notification" style="display: none;"></div>
+
+  <script src="/trangweb/js/categories.js"></script>
+  <script src="/trangweb/js/payment.js"></script>
 </body>
 </html>

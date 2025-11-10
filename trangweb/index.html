@@ -11,16 +11,17 @@
         </title>
 
         <!-- Thêm stylesheet riêng cho header -->
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="/trangweb/css/styles.css">
     </head>
 
     <body>
         <!-- Header: logo, tìm kiếm, đăng nhập, giỏ hàng -->
-        <header role="banner">
-            <div class="header-inner">
-                <a class="logo" href="/" aria-label="Trang chủ NPĐ Beauty">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/VLU_Campus.webp" alt="NPĐ Beauty" />
-                </a>
+      <header role="banner">
+          <div class="header-inner">
+              <a class="logo" href="/" aria-label="Trang chủ NPĐ Beauty">
+                  <img src="/trangweb/image/logo-my-pham-2.png" alt="NPĐ Beauty" />
+                  <span class="logo-text">Nhân Phát Đức Beauty</span>
+              </a>
 
                 <form class="search" role="search" action="/search" method="get" aria-label="Tìm kiếm sản phẩm">
                     <input id="site-search" name="q" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Tìm kiếm" />
@@ -62,12 +63,47 @@
                     </button>
 
                     <ul class="toggle-submenu" role="menu" aria-label="Danh mục chính">
-                        <li role="none"><a role="menuitem" href="/promo">Son môi</a></li>
-                        <li role="none"><a role="menuitem" href="/new">Dưỡng da</a></li>
-                        <li role="none"><a role="menuitem" href="/face-wash">Sữa rửa mặt</a></li>
-                        <li role="none"><a role="menuitem" href="/makeup">Trang điểm</a></li>
-                        <li role="none"><a role="menuitem" href="/mascara">Mascara</a></li>
-                        
+                        <li role="none" class="has-submenu">
+                            <a role="menuitem" href="/face">mặt</a>
+                            <ul class="sub-submenu">
+                                <li><a href="/face/cleanser">Sữa rửa mặt</a></li>
+                                <li><a href="/face/moisturizer">Kem dưỡng</a></li>
+                                <li><a href="/face/serum">Serum</a></li>
+                                <li><a href="/face/mask">Mặt nạ</a></li>
+                            </ul>
+                        </li>
+                        <li role="none" class="has-submenu">
+                            <a role="menuitem" href="/eyes">mắt</a>
+                            <ul class="sub-submenu">
+                                <li><a href="/eyes/mascara">Mascara</a></li>
+                                <li><a href="/eyes/eyeliner">Eyeliner</a></li>
+                                <li><a href="/eyes/eyeshadow">Eyeshadow</a></li>
+                                <li><a href="/eyes/brow">Brow</a></li>
+                            </ul>
+                        </li>
+                        <li role="none" class="has-submenu">
+                            <a role="menuitem" href="/nose">mũi</a>
+                            <ul class="sub-submenu">
+                                <li><a href="/nose/highlighter">Highlighter</a></li>
+                                <li><a href="/nose/contour">Contour</a></li>
+                            </ul>
+                        </li>
+                        <li role="none" class="has-submenu">
+                            <a role="menuitem" href="/lips">môi</a>
+                            <ul class="sub-submenu">
+                                <li><a href="/lips/lipstick">Son môi</a></li>
+                                <li><a href="/lips/lipgloss">Lip gloss</a></li>
+                                <li><a href="/lips/lipliner">Lip liner</a></li>
+                            </ul>
+                        </li>
+                        <li role="none" class="has-submenu">
+                            <a role="menuitem" href="/cheek">má</a>
+                            <ul class="sub-submenu">
+                                <li><a href="/cheek/blush">Blush</a></li>
+                                <li><a href="/cheek/highlighter">Highlighter</a></li>
+                                <li><a href="/cheek/contour">Contour</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
 
@@ -87,73 +123,95 @@
     <strong>The Đức Nhân Phát</strong> áp dụng những công nghệ hiện đại trong ngành mỹ phẩm để tạo ra những sản phẩm an toàn và hiệu quả cao cho mọi làn da
   </p>
 </section>
-    <h2 class="section-title">BỘ SẢN PHẨM NỔI BẬT </h2>
+    <h2 class="section-title"> SẢN PHẨM NỔI BẬT </h2>
     <div class="underline"></div>
     <!-- Danh sách sản phẩm -->
     <div class="product-list">
   <div class="product-item">
-    <img src="link_anh_sanpham1.jpg" alt="Tinh chất trị mụn" />
+    <a href="product.html">
+      <img src="/trangweb/image/link_anh_sanpham1.jpg" alt="Tinh chất trị mụn, se khít lỗ chân lông The Ordinary Niacinamide 10% + Zinc 1%" />
+    </a>
     <p>Tinh chất trị mụn, se khít lỗ chân lông The Ordinary Niacinamide 10% + Zinc 1%</p>
   </div>
 
   <div class="product-item">
-    <img src="link_anh_sanpham10.jpg" alt="Tinh chất cấp nước" />
+    <a href="product.html?id=micellar">
+      <img src="/trangweb/image/link_anh_sanpham10.jpg" alt="Nước Tẩy Trang Byphasse Dành Cho Mọi Loại Da Solution Micellaire" />
+    </a>
     <p>Nước Tẩy Trang Byphasse Dành Cho Mọi Loại Da Solution Micellaire</p>
   </div>
 
   <div class="product-item">
-    <img src="link_anh_sanpham3.jpg" alt="Serum tẩy tế bào chết" />
+    <a href="product.html?id=aha-bha">
+      <img src="/trangweb/image/link_anh_sanpham3.jpg" alt="Serum tẩy tế bào chết, cải thiện mụn The Ordinary AHA 30% BHA 2% Peeling Solution" />
+    </a>
     <p>Serum tẩy tế bào chết, cải thiện mụn The Ordinary AHA 30% BHA 2% Peeling Solution</p>
   </div>
 
   <div class="product-item">
-    <img src="link_anh_sanpham14.jpg" alt="Tinh chất trị mụn khác" />
-    <p>Kem Chống Nắng Caryophy Nâng Tông Smart Sunscreen Tone Up SPF50+/PA+++ 50ml</p>
+    <a href="product.html?id=lash-serum">
+      <img src="/trangweb/image/link_anh_sanpham14.jpg" alt="Serum dưỡng dài mi The Ordinary Multi-Peptide Lash and Brow" />
+    </a>
+    <p>Serum dưỡng dài mi The Ordinary Multi-Peptide Lash and Brow</p>
   </div>
+  
   <div class="product-item">
-    <img src="link_anh_sanpham5.jpg" alt="Tinh chất trị mụn" />
-    <p>Tinh chất trị mụn, se khít lỗ chân lông The Ordinary Niacinamide 10% + Zinc 1%</p>
+    <a href="product.html?id=garnier-micellar">
+      <img src="/trangweb/image/link_anh_sanpham5.jpg" alt="Nước Tẩy Trang Làm Sạch Sâu Garnier 50ML" />
+    </a>
+    <p>Nước Tẩy Trang Làm Sạch Sâu Garnier 50ML</p>
   </div>
 
   <div class="product-item">
-    <img src="link_anh_sanpham6.jpg" alt="Tinh chất cấp nước" />
+    <a href="product.html?id=biore">
+      <img src="/trangweb/image/link_anh_sanpham6.jpg" alt="[Gói 10 Miếng] Khăn Tẩy Trang Bioré Cleansing Cotton Rich Moisture" />
+    </a>
     <p>[Gói 10 Miếng] Khăn Tẩy Trang Bioré Cleansing Cotton Rich Moisture</p>
   </div>
 
   <div class="product-item">
-    <img src="link_anh_sanpham7.jpg" alt="Serum tẩy tế bào chết" />
+    <a href="product.html?id=derladie">
+      <img src="/trangweb/image/link_anh_sanpham7.jpg" alt="[Phiên Bản Nâng Cấp] Nước Tẩy Trang Derladie Làm Sạch Da, Dịu Nhẹ Cleansing Water Witch Hazel Micellar 500ml" />
+    </a>
     <p>[Phiên Bản Nâng Cấp] Nước Tẩy Trang Derladie Làm Sạch Da, Dịu Nhẹ Cleansing Water Witch Hazel Micellar 500ml</p>
   </div>
 
   <div class="product-item">
-    <img src="link_anh_sanpham8.jpg" alt="Tinh chất trị mụn khác" />
-    <p>TSữa Dưỡng Thể Body Vaseline Dưỡng Sáng Da, Dưỡng Ẩm Toàn Thân Healthy Bright
-</p>
-    
+    <a href="product.html?id=vaseline">
+      <img src="/trangweb/image/link_anh_sanpham8.jpg" alt="Sữa Dưỡng Thể Body Vaseline Dưỡng Sáng Da, Dưỡng Ẩm Toàn Thân Healthy Bright" />
+    </a>
+    <p>Sữa Dưỡng Thể Body Vaseline Dưỡng Sáng Da, Dưỡng Ẩm Toàn Thân Healthy Bright</p>
+
   </div>
+
   <div class="product-item">
-    <img src="link_anh_sanpham9.jpg" alt="Tinh chất trị mụn" />
+    <a href="product.html?id=simple">
+      <img src="/trangweb/image/link_anh_sanpham9.jpg" alt="Sữa Rửa Mặt Simple Dịu Nhẹ, Dành Cho Da Nhạy Cảm Refreshing Facial Wash 150ml" />
+    </a>
     <p>Sữa Rửa Mặt Simple Dịu Nhẹ, Dành Cho Da Nhạy Cảm Refreshing Facial Wash 150ml</p>
   </div>
 
   <div class="product-item">
-    <img src="link_anh_sanpham11.jpg" alt="Tinh chất cấp nước" />
+    <a href="product.html?id=senka">
+      <img src="/trangweb/image/link_anh_sanpham11.jpg" alt="Sữa Rửa Mặt Senka Tạo Bọt Dành Cho Da Mụn Perfect Whip Acne Care 100g" />
+    </a>
     <p>Sữa Rửa Mặt Senka Tạo Bọt Dành Cho Da Mụn Perfect Whip Acne Care 100g</p>
   </div>
 
   <div class="product-item">
-    <img src="link_anh_sanpham12.jpg" alt="Serum tẩy tế bào chết" />
-    <p>Nước Hoa Hồng Chiết Xuất Diếp Cá, Tía Tô Chinoshio Natural Skin Lotion 500ml</p>
+    <a href="product.html?id=chinoshio">
+      <img src="/trangweb/image/link_anh_sanpham12.jpg" alt="Nước Hoa Hồng  Chiết Xuất Diếp Cá, Tía Tô Chinoshio Natural Skin Lotion 500ml" />
+    </a>
+    <p>Nước Hoa Hồng  Chiết Xuất Diếp Cá, Tía Tô Chinoshio Natural Skin Lotion 500ml</p>
   </div>
 
   <div class="product-item">
-    <img src="link_anh_sanpham13.jpg" alt="Tinh chất trị mụn khác" />
+    <a href="product.html?id=angels-liquid">
+      <img src="/trangweb/image/link_anh_sanpham13.jpg" alt="Kem Dưỡng Angel's Liquid Hỗ Trợ Sáng Da, Mờ Thâm Nám 7 Day Glutathione 700 V-Cream 50ml" />
+    </a>
     <p>Kem Dưỡng Angel's Liquid Hỗ Trợ Sáng Da, Mờ Thâm Nám 7 Day Glutathione 700 V-Cream 50ml</p>
   </div>
-</div>
-        <!-- Thay inline script bằng file JS riêng -->
-        <script src="js/categories.js" defer></script>
-    </body>
+
     <footer class="footer">
   <div class="footer-container">
     <div class="footer-section">
@@ -190,4 +248,6 @@
     <p>Copyright 2025 © <strong>ordinary.com.vn</strong></p>
   </div>
 </footer>
+
+    </body>
 </html>
