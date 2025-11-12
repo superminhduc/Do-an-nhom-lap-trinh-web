@@ -124,3 +124,9 @@
         flex-direction: column;
     }
 }
+main h1 {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  font-size: 2rem;
+}

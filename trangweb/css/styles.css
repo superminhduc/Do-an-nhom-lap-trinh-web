@@ -151,11 +151,11 @@ header {
 
 /* Breadcrumb */
 .breadcrumb {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
+    margin: 25px 200px;
+    padding: 0;
     font-size: 14px;
     color: #666;
+    text-align: left; /* Căn trái breadcrumb */
 }
 
 .breadcrumb a {
@@ -165,6 +165,7 @@ header {
 
 .breadcrumb a:hover {
     text-decoration: underline;
+    text-align: left;
 }
 
 /* Navigation */
@@ -322,7 +323,7 @@ header {
   background-color: #5a574c;
   color: #ddd;
   font-family: Arial, sans-serif;
-  padding: 40px 20px 20px 20px;
+  padding: 40px 0 20px 0; /* bỏ padding hai bên để full */
   margin-top: auto;
   width: 100%;
 }
@@ -330,9 +331,13 @@ header {
 .footer-container {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px; /* giữ nội dung đẹp ở giữa */
+  margin: 0 auto; /* căn giữa nội dung */
+  padding: 0 40px; /* thêm khoảng trống hai bên trong */
 }
+
 
 .footer-section {
   flex-basis: 30%; /* tăng kích thước mỗi cột vì giảm 1 cột */
@@ -341,10 +346,9 @@ header {
 
 .footer-section h3 {
   font-size: 16px;
-  letter-spacing: 1px;
   font-weight: bold;
   margin-bottom: 5px;
-}
+}  
 
 .footer-section hr {
   border: 1px solid #aaa;
@@ -353,12 +357,6 @@ header {
   opacity: 0.7;
 }
 
-.footer-section p,
-.footer-section li {
-  color: #ddd;
-  font-size: 13px;
-  line-height: 1.6;
-}
 
 .footer-section ul {
   list-style: none;
@@ -431,7 +429,6 @@ header {
 
 .product-list {
   display: flex;
-  justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto 60px auto;
   flex-wrap: wrap;
@@ -455,9 +452,9 @@ header {
 
 .product-item img {
   max-width: 100%;
-  height: auto;
+  height: 200px;
   margin-bottom: 1px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .product-item p {

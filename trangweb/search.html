@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="HandheldFriendly" content="true">
+    <title>
+        Tìm kiếm - Nhân Phát Đức Beauty &ndash; NPĐ Beauty
+    </title>
+
+    <!-- Thêm stylesheet riêng cho header -->
+    <link rel="stylesheet" href="/trangweb/css/styles.css">
+</head>
+
+<body>
+    <!-- Header: logo, tìm kiếm, đăng nhập, giỏ hàng -->
+    <header role="banner">
+        <div class="header-inner">
+            <a class="logo" href="/trangweb/index.html" aria-label="Trang chủ NPĐ Beauty">
+                <img src="/trangweb/image/logo-my-pham-2.png" alt="NPĐ Beauty" />
+                <span class="logo-text">Nhân Phát Đức Beauty</span>
+            </a>
+
+            <form class="search" role="search" action="/trangweb/search.html" method="get" aria-label="Tìm kiếm sản phẩm">
+                <input id="site-search" name="q" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Tìm kiếm" />
+                <button type="submit" aria-label="Tìm">
+                    <!-- icon tìm kiếm đơn giản -->
+                    🔍
+                </button>
+            </form>
+
+            <div class="header-actions" role="group" aria-label="Tác vụ người dùng">
+                <a class="icon-btn" href="/trangweb/login.html" aria-label="Đăng nhập">
+                    <!-- icon người (svg) -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 12c2.209 0 4-1.791 4-4s-1.791-4-4-4-4 1.791-4 4 1.791 4 4 4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 20c0-2.5 3.582-4 8-4s8 1.5 8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+
+                <a class="icon-btn" href="/trangweb/cart.html" aria-label="Giỏ hàng">
+                    <!-- icon giỏ hàng (svg) -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 6h15l-1.5 9h-12L6 6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="10" cy="20" r="1" fill="currentColor"/>
+                        <circle cx="18" cy="20" r="1" fill="currentColor"/>
+                    </svg>
+                    <span class="cart-count" aria-hidden="true">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MỤC DANH MỤC SẢN PHẨM -->
+    <nav class="categories" aria-label="Danh mục sản phẩm">
+        <div class="categories-inner">
+            <!-- wrapper để submenu chỉ hiện khi trỏ vào nút "Danh mục" -->
+            <div class="categories-toggle-wrap">
+                <button class="categories-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                    Danh Mục Sản Phẩm ▾
+                </button>
+
+                <ul class="toggle-submenu" role="menu" aria-label="Danh mục chính">
+                    <li role="none">
+                        <a role="menuitem" href="/trangweb/category/face.html">Mặt</a>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem" href="/trangweb/category/eyes.html">Mắt</a>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem" href="/trangweb/category/nose.html">Mũi</a>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem" href="/trangweb/category/lips.html">Môi</a>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem" href="/trangweb/category/cheek.html">Má</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="/trangweb/index.html">Trang chủ</a> > Tìm kiếm
+    </div>
+
+    <!-- Kết quả tìm kiếm -->
+    <section class="search-results-section">
+        <h2 class="section-title">Kết quả tìm kiếm</h2>
+        <div class="underline"></div>
+        <div id="search-results" class="product-list">
+            <!-- Kết quả sẽ được chèn vào đây bởi JavaScript -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>LIÊN HỆ</h3>
+                <hr />
+                <p>Địa chỉ: 38 đường 6, Long Trường, Quận 9, Hồ Chí Minh</p>
+                <p>Email: NhanPhatDucBeauty.vn@gmail.com</p>
+                <p>Hotline: 0399.135.719</p>
+                <p>https://NhanPhatDucBeauty.com.vn/</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+                <hr />
+                <ul>
+                    <li>Giới thiệu</li>
+                    <li>Hướng dẫn mua hàng</li>
+                    <li>Chính sách đổi trả</li>
+                    <li>Chính sách bảo mật</li>
+                    <li>Điều khoản dịch vụ</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>FACEBOOK</h3>
+                <hr />
+                <div class="facebook-box">
+                    <img src="/trangweb/image/link_anh_facebook.png" alt="Nhân Phát Đức Beauty" />
+                    <p>Nhân Phát Đức Beauty<br/>37.194 lượt thích</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright 2025 © <strong>ordinary.com.vn</strong></p>
+        </div>
+    </footer>
+
+    <script>
+        // Danh sách sản phẩm (expanded to include more products)
+const products = [
+    // --- SẢN PHẨM ---
+    { link: "product.html", img: "/trangweb/image/link_anh_sanpham1.jpg", alt: "Tinh chất trị mụn, se khít lỗ chân lông The Ordinary Niacinamide 10% + Zinc 1%", name: "Tinh chất trị mụn, se khít lỗ chân lông The Ordinary Niacinamide 10% + Zinc 1%", tags: ["serum", "trị mụn", "se khít", "ordinary"] },
+    { link: "product.html?id=micellar", img: "/trangweb/image/link_anh_sanpham10.jpg", alt: "Nước Tẩy Trang Byphasse Dành Cho Mọi Loại Da Solution Micellaire", name: "Nước Tẩy Trang Byphasse Dành Cho Mọi Loại Da Solution Micellaire", tags: ["tẩy trang", "micellar", "byphasse"] },
+    { link: "product.html?id=aha-bha", img: "/trangweb/image/link_anh_sanpham3.jpg", alt: "Serum tẩy tế bào chết, cải thiện mụn The Ordinary AHA 30% BHA 2% Peeling Solution", name: "Serum tẩy tế bào chết, cải thiện mụn The Ordinary AHA 30% BHA 2% Peeling Solution", tags: ["serum", "aha", "bha", "peeling", "tẩy tế bào chết"] },
+    { link: "product.html?id=lash-serum", img: "/trangweb/image/link_anh_sanpham14.jpg", alt: "Serum dưỡng dài mi The Ordinary Multi-Peptide Lash and Brow", name: "Serum dưỡng dài mi The Ordinary Multi-Peptide Lash and Brow", tags: ["serum", "mi", "lông mày", "lash", "brow"] },
+    { link: "product.html?id=garnier-micellar", img: "/trangweb/image/link_anh_sanpham5.jpg", alt: "Nước Tẩy Trang Làm Sạch Sâu Garnier 50ML", name: "Nước Tẩy Trang Làm Sạch Sâu Garnier 50ML", tags: ["tẩy trang", "garnier", "micellar"] },
+    { link: "product.html?id=biore", img: "/trangweb/image/link_anh_sanpham6.jpg", alt: "[Gói 10 Miếng] Khăn Tẩy Trang Bioré Cleansing Cotton Rich Moisture", name: "[Gói 10 Miếng] Khăn Tẩy Trang Bioré Cleansing Cotton Rich Moisture", tags: ["tẩy trang", "biore", "khăn tẩy trang"] },
+    { link: "product.html?id=derladie", img: "/trangweb/image/link_anh_sanpham7.jpg", alt: "[Phiên Bản Nâng Cấp] Nước Tẩy Trang Derladie Làm Sạch Da, Dịu Nhẹ", name: "[Phiên Bản Nâng Cấp] Nước Tẩy Trang Derladie Làm Sạch Da, Dịu Nhẹ", tags: ["tẩy trang", "derladie", "micellar"] },
+    { link: "product.html?id=vaseline", img: "/trangweb/image/link_anh_sanpham8.jpg", alt: "Sữa Dưỡng Thể Body Vaseline Dưỡng Sáng Da", name: "Sữa Dưỡng Thể Body Vaseline Dưỡng Sáng Da", tags: ["dưỡng thể", "vaseline", "body", "kem dưỡng"] },
+    { link: "product.html?id=simple", img: "/trangweb/image/link_anh_sanpham9.jpg", alt: "Sữa Rửa Mặt Simple Dịu Nhẹ", name: "Sữa Rửa Mặt Simple Dịu Nhẹ", tags: ["rửa mặt", "simple", "sữa rửa mặt"] },
+    { link: "product.html?id=senka", img: "/trangweb/image/link_anh_sanpham11.jpg", alt: "Sữa Rửa Mặt Senka Dành Cho Da Mụn", name: "Sữa Rửa Mặt Senka Dành Cho Da Mụn", tags: ["rửa mặt", "senka", "acne"] },
+
+    // --- MÁ HỒNG ---
+    { link: "product.html?id=rare-beauty-blush", img: "/trangweb/image/ma-hong-rare-beauty.png", alt: "Má Hồng Rare Beauty", name: "Má Hồng Kem Rare Beauty Soft Pinch Liquid Blush 7.5ml", tags: ["má hồng", "blush", "rare beauty", "makeup", "trang điểm"] },
+    { link: "product.html?id=nars-afterglow-blush", img: "/trangweb/image/ma-hong-nars.png", alt: "Má Hồng Nars Afterglow", name: "Má Hồng Dạng Kem Nars Afterglow Liquid Blush", tags: ["má hồng", "nars", "blush", "phấn má"] },
+    { link: "product.html?id=judydoll-blush", img: "/trangweb/image/ma-hong-judydoll.png", alt: "Phấn Má Hồng Judydoll", name: "Phấn Má Hồng Judydoll Mềm Mịn", tags: ["má hồng", "judydoll", "blush"] },
+    { link: "product.html?id=ysl-blush", img: "/trangweb/image/ma-hong-ysl.png", alt: "Má Hồng YSL", name: "Má Hồng YSL Make Me Blush 24h", tags: ["má hồng", "ysl", "blush"] },
+    { link: "product.html?id=fenty-blush", img: "/trangweb/image/ma-hong-fenty.png", alt: "Má Hồng Fenty", name: "Má Hồng Fenty Beauty Cheeks Out", tags: ["má hồng", "fenty", "blush"] },
+
+    // --- SON ---
+    { link: "product.html?id=son-dior", img: "/trangweb/image/son-dior.png", alt: "Son Dior Addict Lip Glow", name: "Dior Addict Lip Glow", tags: ["son", "môi", "lip", "dưỡng môi", "son dưỡng", "dior"] },
+    { link: "product.html?id=son-gucci", img: "/trangweb/image/son-gucci.png", alt: "Son Gucci", name: "Gucci Baume À Lèvres Lip Balm", tags: ["son", "môi", "lip", "gucci", "son dưỡng"] },
+    { link: "product.html?id=son-ysl", img: "/trangweb/image/son-ysl.png", alt: "Son YSL", name: "YSL Loveshine Candy Glow", tags: ["son", "môi", "ysl", "lipstick"] },
+    { link: "product.html?id=son-chanel", img: "/trangweb/image/son-chanel.png", alt: "Son Chanel", name: "Chanel Healthy Glow Lip Balm", tags: ["son", "môi", "chanel", "lip", "bóng môi"] },
+    { link: "product.html?id=son-nars", img: "/trangweb/image/son-nars.png", alt: "Son Nars", name: "NARS Afterglow Lip Balm", tags: ["son", "nars", "lip", "môi"] },
+    { link: "product.html?id=son-rms", img: "/trangweb/image/son-rms.png", alt: "Son RMS", name: "RMS Beauty Tinted Lip Balm", tags: ["son", "rms", "lip", "môi", "son dưỡng"] },
+
+    // --- KEM MẮT ---
+    { link: "product.html?id=eye-cream-la-mer", img: "/trangweb/image/eye-cream-la-mer.png", alt: "Kem mắt La Mer", name: "La Mer The Eye Concentrate", tags: ["kem mắt", "dưỡng mắt", "eye cream", "la mer"] },
+    { link: "product.html?id=eye-cream-estee-lauder", img: "/trangweb/image/eye-cream-estee-lauder.png", alt: "Kem mắt Estée Lauder", name: "Estée Lauder Advanced Night Repair Eye", tags: ["kem mắt", "dưỡng mắt", "estee lauder"] },
+    { link: "product.html?id=eye-cream-shiseido", img: "/trangweb/image/eye-cream-shiseido.png", alt: "Kem mắt Shiseido", name: "Shiseido Wrinkle Resist Eye Mask", tags: ["kem mắt", "dưỡng mắt", "shiseido", "eye"] },
+
+    // --- TẠO KHỐI / MŨI ---
+    { link: "product.html?id=nose-contour-bobbi-brown", img: "/trangweb/image/nose-contour-bobbi-brown.png", alt: "Tạo khối Bobbi Brown", name: "Bobbi Brown Shimmer Brick Compact", tags: ["tạo khối", "contour", "mũi", "bobbi brown"] },
+    { link: "product.html?id=nose-contour-nars", img: "/trangweb/image/nose-contour-nars.png", alt: "Che khuyết điểm Nars", name: "NARS Radiant Creamy Concealer", tags: ["tạo khối", "contour", "nars", "che khuyết điểm"] },
+    
+   // --- KEM DƯỠNG & CHỐNG NẮNG ---
+    { link: "product.html?id=la-mer-moisturizing-cream", img: "/trangweb/image/nose-contour-la-mer.png", alt: "Kem dưỡng La Mer", name: "La Mer Crème de la Mer Moisturizing Cream", tags: ["kem dưỡng", "dưỡng ẩm", "la mer", "cream"] },
+    { link: "product.html?id=shiseido-sunscreen", img: "/trangweb/image/nose-contour-shiseido.png", alt: "Shiseido Bronzer", name: "Shiseido Bronzer", tags: ["chống nắng", "kem chống nắng", "shiseido", "spf"] },
+    { link: "product.html?id=the-ordinary-natural-moisturizing", img: "/trangweb/image/nose-contour-the-ordinary.png", alt: "Kem dưỡng Ordinary", name: "The Ordinary Natural Moisturizing Factors + HA", tags: ["kem dưỡng", "ordinary", "dưỡng ẩm", "cream"] }
+ ];
+
+
+
+        // Hàm lấy tham số từ URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Hàm hiển thị kết quả
+        function displayResults(query) {
+            const resultsContainer = document.getElementById('search-results');
+            if (!query) {
+                resultsContainer.innerHTML = '<p>Vui lòng nhập từ khóa tìm kiếm.</p>';
+                return;
+            }
+
+            const filteredProducts = products.filter(product => {
+                const q = query.toLowerCase();
+                const nameMatch = product.name.toLowerCase().includes(q);
+                const tagMatch = product.tags && product.tags.some(tag => tag.toLowerCase().includes(q));
+                return nameMatch || tagMatch;
+            });
+
+
+            if (filteredProducts.length === 0) {
+                resultsContainer.innerHTML = '<p>Không tìm thấy sản phẩm nào phù hợp với từ khóa "' + query + '".</p>';
+                return;
+            }
+
+            let html = '';
+            filteredProducts.forEach(product => {
+                html += `
+                    <div class="product-item">
+                        <a href="${product.link}">
+                            <img src="${product.img}" alt="${product.alt}" />
+                        </a>
+                        <p>${product.name}</p>
+                    </div>
+                `;
+            });
+            resultsContainer.innerHTML = html;
+        }
+
+        // Thực thi khi trang load
+        document.addEventListener('DOMContentLoaded', function() {
+            const query = getQueryParam('q');
+            displayResults(query);
+        });
+    </script>
+</body>
+</html>
